@@ -1,0 +1,9 @@
+.header {
+  display: flex;
+  justify-content: center;
+
+  &__logo {
+    max-height: 1.563rem;
+    max-width: 7.5rem;
+  }
+}
