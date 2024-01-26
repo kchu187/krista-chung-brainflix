@@ -12,11 +12,15 @@ const App = () => {
     setSelectedVideo(video);
   };
 
+  const filteredVideos = VideoData.filter(
+    (video) => video.id !== selectedVideo.id
+  );
+
   return (
     <>
       <Header />
       <VideoPlayer selectedVideo={selectedVideo} />
-      <VideoList videos={VideoData} onSelectedVideo={handleVideoSelect} />
+      <VideoList videos={filteredVideos} onSelectedVideo={handleVideoSelect} />
     </>
   );
 };

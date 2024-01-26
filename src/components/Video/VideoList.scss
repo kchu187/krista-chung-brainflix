@@ -1,10 +1,22 @@
 @use "../../styles/colors" as colors;
 
 .video-list {
-  background-color: red;
   list-style-type: none;
 
+  padding: 0rem;
+
+  &__container {
+    border: 1px solid black;
+  }
+
+  &__heading {
+    margin-left: 1rem;
+  }
   &__item {
+    padding: 0rem 1rem;
+    display: flex;
+    flex-direction: row;
+    margin: 0.5rem 0rem;
   }
 
   &__image {
