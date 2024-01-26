@@ -1,0 +1,11 @@
+@use "../src/styles/fonts" as font;
+@use "../src/styles/colors" as colors;
+
+body {
+  margin: 1rem;
+  font-family: font.$font-stack;
+  font-weight: font.$regular;
+
+  color: colors.$black;
+  font-size: 0.813rem;
+}

@@ -1,0 +1,28 @@
+//Font Variables
+$font-stack: "Avenir";
+$regular: 400;
+$demi: 600;
+$bold: 700;
+
+// Import fonts
+
+@font-face {
+  font-family: "Avenir";
+  src: url("../assets/Font/AvenirNextLTPro-Regular.otf") format("opentype"),
+    url("../assets/Font/AvenirNextLTPro.ttf") format("truetype");
+  font-weight: $regular;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("../assets/Font/AvenirNextLTPro-Demi.otf") format("opentype");
+  src: url("../assets/Font/AvenirNextLTProDemi.ttf") format("truetype");
+  font-weight: $demi;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("../assets/Font/AvenirNextLTPro-Bold.otf") format("opentype");
+  src: url("../assets/Font/AvenirNextLTProBold.ttf") format("truetype");
+  font-weight: $bold;
+}

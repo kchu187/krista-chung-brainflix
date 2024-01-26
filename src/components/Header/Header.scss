@@ -1,9 +1,42 @@
+@use "../../styles/colors" as colors;
 .header {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 1rem;
 
   &__logo {
     max-height: 1.563rem;
     max-width: 7.5rem;
+    margin-bottom: 1rem;
+    margin-left: 5rem;
+  }
+
+  &__search {
+    &-container {
+      background-color: colors.$alabaster;
+      border: 0.063rem solid colors.$mercury;
+      border-radius: 0.25rem;
+      display: flex;
+      width: 14rem;
+      height: auto;
+    }
+
+    &-text {
+      margin: 0.6rem 0rem 0.8rem 0rem;
+    }
+
+    &-icon {
+      margin: 0rem 0.8rem;
+    }
+  }
+
+  &__avatar {
+    border-radius: 100%;
+    width: 2.8rem;
+    height: 2.8rem;
+    position: absolute;
+    top: 3.2rem;
+    left: 16rem;
   }
 }
