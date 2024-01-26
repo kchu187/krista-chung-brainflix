@@ -2,10 +2,9 @@
 @use "../src/styles/colors" as colors;
 
 body {
-  margin: 1rem;
+  margin: 0rem;
   font-family: font.$font-stack;
   font-weight: font.$regular;
-
   color: colors.$black;
   font-size: 0.813rem;
 }

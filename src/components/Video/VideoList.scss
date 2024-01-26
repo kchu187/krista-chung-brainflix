@@ -1,0 +1,14 @@
+@use "../../styles/colors" as colors;
+
+.video-list {
+  background-color: red;
+  list-style-type: none;
+
+  &__item {
+  }
+
+  &__image {
+    width: 5rem;
+    height: auto;
+  }
+}
