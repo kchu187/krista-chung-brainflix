@@ -2,8 +2,9 @@ import { useState } from "react";
 import "./App.scss";
 import Header from "./components/Header/Header";
 import VideoData from "./Data/videos.json";
-import VideoDetails from "./Data/video-details.json";
+import VideoDetailsData from "./Data/video-details.json";
 import VideoPlayer from "./components/Video/VideoPlayer";
+import VideoDescription from "./components/Video/VideoDescription.js";
 import VideoList from "./components/Video/VideoList";
 
 const App = () => {
@@ -12,11 +13,11 @@ const App = () => {
 
   // Set separate state for video details
   const [selectedVideoDetails, setSelectedVideoDetails] = useState(
-    VideoDetails[0]
+    VideoDetailsData[0]
   );
 
   const handleVideoSelect = (video) => {
-    const description = VideoDetails.find(
+    const description = VideoDetailsData.find(
       (description) => description.id === video.id
     );
     setSelectedVideo(video);
@@ -31,6 +32,7 @@ const App = () => {
     <>
       <Header />
       <VideoPlayer selectedVideo={selectedVideo} />
+      <VideoDescription selectedVideoDetails={selectedVideoDetails} />
       <VideoList videos={filteredVideos} onSelectedVideo={handleVideoSelect} />
     </>
   );
