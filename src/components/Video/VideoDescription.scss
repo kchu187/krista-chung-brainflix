@@ -1,0 +1,28 @@
+@use "../../styles/colors" as colors;
+@use "../../styles/fonts" as font;
+.video-description {
+  margin: 0rem 1rem;
+
+  &__title {
+    line-height: 1.8rem;
+    font-weight: font.$demi;
+    font-size: 1.5rem;
+  }
+  &__container {
+    display: flex;
+    justify-content: flex-start;
+    gap: 4rem;
+    border-bottom: 0.063rem solid colors.$mercury;
+    border-top: 0.063rem solid colors.$mercury;
+  }
+
+  &__sub-description {
+    &--bold {
+      font-weight: font.$demi;
+    }
+
+    &--grey {
+      color: colors.$silver;
+    }
+  }
+}
