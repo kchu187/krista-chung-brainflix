@@ -25,4 +25,11 @@
   &__icon {
     margin: 1rem;
   }
+
+  &__comment-form {
+    @extend .button;
+    padding: 1rem 0.8rem;
+    gap: 3rem;
+    width: 14rem;
+  }
 }

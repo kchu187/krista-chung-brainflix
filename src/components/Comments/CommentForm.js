@@ -20,10 +20,10 @@ const CommentForm = ({ selectedVideoDetails }) => {
         ></textarea>
 
         <Button
-          buttonClassName="button__header"
-          label="UPLOAD"
+          buttonClassName="button__comment-form"
+          label="COMMENT"
           iconImage={CommentIcon}
-          iconClassName="button__icon"
+          iconClassName="button__icon--comment-form"
         />
       </form>
     </div>

@@ -4,6 +4,8 @@
 .comments-form {
   &__container {
     display: flex;
+    gap: 1rem;
+    margin: 0rem 1rem;
   }
   &__title {
     color: colors.$silver;
@@ -25,14 +27,15 @@
   }
 
   &__field {
-    width: 92%;
+    width: 91%;
+    height: 5rem;
     color: colors.$black;
     background-color: colors.$alabaster;
     border-color: colors.$mercury;
     border: solid 0.063rem colors.$mercury;
     border-radius: 0.25rem;
     font-family: avenir;
-    padding: 0.5rem;
+    padding: 0.8rem;
     outline: none;
   }
 }

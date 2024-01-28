@@ -37,8 +37,8 @@ const App = () => {
       <div className="container">
         <div className="sub-container">
           <VideoDescription selectedVideoDetails={selectedVideoDetails} />
-          <Comments selectedVideoDetails={selectedVideoDetails} />
           <CommentForm />
+          <Comments selectedVideoDetails={selectedVideoDetails} />
         </div>
         <VideoList
           videos={filteredVideos}
