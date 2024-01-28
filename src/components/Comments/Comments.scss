@@ -1,0 +1,15 @@
+@use "../../styles/fonts" as font;
+@use "../../styles/colors" as colors;
+
+.comments {
+  &__list {
+    list-style: none;
+    padding-left: 0rem;
+
+    // @include tablet {
+    //   margin-left: 4rem;
+    // }
+    // @include desktop {
+    //   margin-left: 17rem;
+  }
+}

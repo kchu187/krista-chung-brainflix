@@ -22,7 +22,6 @@ const VideoDescription = ({ selectedVideoDetails }) => {
             <img
               className="video-description__icon"
               src={ViewsIcon}
-              className="video-description__sub-details"
               alt="Icon image of an eye"
             />
             {selectedVideoDetails.views}
@@ -32,7 +31,6 @@ const VideoDescription = ({ selectedVideoDetails }) => {
             <img
               className="video-description__icon"
               src={LikesIcon}
-              className="video-description__sub-details"
               alt="Small grey thumbs-up icon"
             />
             {selectedVideoDetails.likes}
@@ -40,6 +38,9 @@ const VideoDescription = ({ selectedVideoDetails }) => {
         </div>
       </div>
       <p> {selectedVideoDetails.description} </p>
+      <p className="video-description__comment-number">
+        {selectedVideoDetails.comments.length} Comments
+      </p>
     </section>
   );
 };

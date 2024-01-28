@@ -6,6 +6,7 @@ import VideoDetailsData from "./Data/video-details.json";
 import VideoPlayer from "./components/Video/VideoPlayer";
 import VideoDescription from "./components/Video/VideoDescription.js";
 import VideoList from "./components/Video/VideoList";
+import Comments from "./components/Comments/Comments.js";
 
 const App = () => {
   //Set state for the video that has been clicked which will be the selected video
@@ -33,6 +34,7 @@ const App = () => {
       <Header />
       <VideoPlayer selectedVideo={selectedVideo} />
       <VideoDescription selectedVideoDetails={selectedVideoDetails} />
+      <Comments selectedVideoDetails={selectedVideoDetails} />
       <VideoList videos={filteredVideos} onSelectedVideo={handleVideoSelect} />
     </>
   );
