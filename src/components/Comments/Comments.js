@@ -17,13 +17,15 @@ const Comments = ({ selectedVideoDetails }) => {
           <li className="comments__item" key={i}>
             <div className="comments__avatar"></div>
             <div className="comments__subsection">
-              <div>
-                <p>{comments.name}</p>
+              <div className="comments__name-container">
+                <p className="comments__name">{comments.name}</p>
 
-                <p> {formattedTime(comments.timestamp)}</p>
+                <p className="comments__timestamp">
+                  {formattedTime(comments.timestamp)}
+                </p>
               </div>
+              <p className="comments__content"> {comments.comment}</p>
             </div>
-            <p> {comments.comment}</p>
           </li>
         ))}
       </ul>
