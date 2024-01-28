@@ -1,26 +1,40 @@
 @use "../../styles/colors" as colors;
-
+@use "../../styles/fonts" as font;
 .video-list {
   list-style-type: none;
 
   padding: 0rem;
 
   &__container {
-    border: 1px solid black;
   }
 
   &__heading {
-    margin-left: 1rem;
+    color: colors.$silver;
+    font-weight: 600;
+    font-size: 0.813rem;
+    margin: 1rem 0rem 0.5rem 1rem;
   }
   &__item {
     padding: 0rem 1rem;
     display: flex;
     flex-direction: row;
     margin: 0.5rem 0rem;
+    gap: 1rem;
   }
 
   &__image {
-    width: 5rem;
-    height: auto;
+    width: 6rem;
+    height: 4rem;
+    object-fit: cover;
+    border-radius: 0.25rem;
+  }
+
+  &__text-container {
+    width: 10rem;
+  }
+  &__title {
+    margin-top: 0rem;
+    font-weight: font.$demi;
+    text-overflow: ellipsis;
   }
 }
