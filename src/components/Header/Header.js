@@ -26,7 +26,7 @@ function Header() {
           alt="side profile of man's face"
         />
         <Button
-          buttonClassName="button"
+          buttonClassName="button__header"
           label="UPLOAD"
           iconImage={uploadIcon}
           iconClassName="button__icon"

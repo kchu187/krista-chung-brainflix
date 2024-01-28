@@ -1,0 +1,38 @@
+@use "../../styles/fonts" as font;
+@use "../../styles/colors" as colors;
+
+.comments-form {
+  &__container {
+    display: flex;
+  }
+  &__title {
+    color: colors.$silver;
+    font-weight: font.$demi;
+    font-size: 0.813rem;
+    margin: 1rem 0rem 0.5rem;
+  }
+  &__avatar {
+    border-radius: 100%;
+    width: 8rem;
+    height: 2.188rem;
+    background-color: colors.$mercury;
+    position: relative;
+    top: 0.8rem;
+    max-width: 2.25rem;
+    max-height: 2.25rem;
+    top: 2rem;
+    object-fit: cover;
+  }
+
+  &__field {
+    width: 92%;
+    color: colors.$black;
+    background-color: colors.$alabaster;
+    border-color: colors.$mercury;
+    border: solid 0.063rem colors.$mercury;
+    border-radius: 0.25rem;
+    font-family: avenir;
+    padding: 0.5rem;
+    outline: none;
+  }
+}

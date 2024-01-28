@@ -19,6 +19,7 @@
   gap: 4rem;
 
   &__header {
+    @extend .button;
   }
 
   &__icon {
