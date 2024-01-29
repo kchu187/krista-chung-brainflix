@@ -4,7 +4,7 @@
 .comments-form {
   &__container {
     display: flex;
-    gap: 3.5rem;
+    gap: 1.5rem;
     margin: 0rem 1rem;
 
     @include desktop {
@@ -33,6 +33,10 @@
       max-width: 3rem;
       max-height: 3rem;
       height: auto;
+      left: 0.5rem;
+    }
+
+    @include desktop {
       left: 2.5rem;
     }
   }

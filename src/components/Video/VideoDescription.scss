@@ -26,7 +26,7 @@
 
     @include tablet {
       border-top: unset;
-      gap: 29rem;
+      gap: 25rem;
     }
   }
 
@@ -40,6 +40,9 @@
   &__sub-description {
     &--bold {
       font-weight: font.$demi;
+      @include tablet {
+        width: 5rem;
+      }
       @include desktop {
         margin: 0.5rem;
       }
