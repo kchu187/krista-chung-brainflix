@@ -1,4 +1,7 @@
 @use "../../styles/colors" as colors;
+
+@use "../../styles/mixins" as *;
+
 .header {
   display: flex;
   flex-direction: column;
@@ -6,11 +9,22 @@
   margin-bottom: 1rem;
   margin: 1rem;
 
+  @include tablet {
+    flex-direction: row;
+    margin-left: unset;
+    gap: 1rem;
+    margin-top: 0.5rem;
+  }
   &__logo {
     max-height: 1.563rem;
     max-width: 7.5rem;
     margin-bottom: 1rem;
     margin-left: 5rem;
+
+    @include tablet {
+      margin: 1rem;
+      margin-left: 1.5rem;
+    }
   }
 
   &__search {
@@ -21,6 +35,18 @@
       display: flex;
       width: 14rem;
       height: 2.3rem;
+
+      @include tablet {
+        left: 13rem;
+        position: absolute;
+        top: 1.5rem;
+        width: 17rem;
+      }
+
+      @include desktop {
+        left: 39rem;
+        width: 17.5rem;
+      }
     }
 
     &-text {
@@ -29,6 +55,8 @@
 
     &-icon {
       margin: 0rem 0.8rem;
+      height: auto;
+      width: 1.5rem;
     }
   }
 
@@ -39,5 +67,13 @@
     position: absolute;
     top: 3.2rem;
     left: 16rem;
+    @include tablet {
+      top: 1.2rem;
+      left: 44rem;
+    }
+
+    @include desktop {
+      left: 69rem;
+    }
   }
 }

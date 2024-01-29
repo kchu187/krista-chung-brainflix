@@ -1,6 +1,14 @@
 import "./VideoDescription.scss";
 import ViewsIcon from "../../assets/images/Icons/views.svg";
 import LikesIcon from "../../assets/images/Icons/likes.svg";
+//Create a function to format epoch time to readable timestamps
+function formattedTime(timestamp) {
+  const date = new Date(timestamp);
+  return `${(date.getMonth() + 1).toString().padStart(2, "0")}/${date
+    .getDate()
+    .toString()
+    .padStart(2, "0")}/${date.getFullYear()}`;
+}
 
 const VideoDescription = ({ selectedVideoDetails }) => {
   return (
@@ -14,7 +22,7 @@ const VideoDescription = ({ selectedVideoDetails }) => {
           </p>
           <p className="video-description__sub-description--grey">
             {" "}
-            {selectedVideoDetails.timestamp}
+            {formattedTime(selectedVideoDetails.timestamp)}
           </p>
         </div>
         <div className="video-description__sub-container">
@@ -37,7 +45,10 @@ const VideoDescription = ({ selectedVideoDetails }) => {
           </p>
         </div>
       </div>
-      <p> {selectedVideoDetails.description} </p>
+      <p className="video-description__description">
+        {" "}
+        {selectedVideoDetails.description}{" "}
+      </p>
       <p className="video-description__comment-number">
         {selectedVideoDetails.comments.length} Comments
       </p>

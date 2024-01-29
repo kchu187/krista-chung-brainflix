@@ -1,9 +1,13 @@
 @use "../../styles/colors" as colors;
 @use "../../styles/fonts" as font;
+@use "../../styles/mixins" as *;
 .video-list {
   list-style-type: none;
-
   padding: 0rem;
+
+  @include desktop {
+    border-left: 0.063rem solid colors.$mercury;
+  }
 
   &__container {
   }

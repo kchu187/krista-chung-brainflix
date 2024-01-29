@@ -1,5 +1,6 @@
 @use "../styles/colors" as colors;
 @use "../styles/fonts" as font;
+@use "../styles/mixins" as *;
 
 .button {
   background-color: colors.$blue;
@@ -20,6 +21,17 @@
 
   &__header {
     @extend .button;
+
+    @include tablet {
+      width: 10rem;
+      gap: unset;
+      position: absolute;
+      left: 33rem;
+    }
+
+    @include desktop {
+      left: 58rem;
+    }
   }
 
   &__icon {
@@ -31,5 +43,17 @@
     padding: 1rem 0.8rem;
     gap: 3rem;
     width: 14rem;
+
+    @include tablet {
+      position: absolute;
+      top: 49.8rem;
+      left: 37rem;
+      gap: 1rem;
+      width: 10rem;
+    }
+    @include desktop {
+      left: 49rem;
+      top: 58rem;
+    }
   }
 }

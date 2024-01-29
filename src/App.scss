@@ -1,5 +1,6 @@
 @use "../src/styles/fonts" as font;
 @use "../src/styles/colors" as colors;
+@use "../src/styles/mixins" as *;
 
 body {
   margin: 0rem;
@@ -13,4 +14,8 @@ body {
 .container {
   display: flex;
   flex-direction: column;
+
+  @include desktop {
+    flex-direction: row;
+  }
 }

@@ -26,6 +26,7 @@ const App = () => {
     setSelectedVideoDetails(description);
   };
 
+  //Filter videos so the selected video does not show in the videolist
   const filteredVideos = VideoData.filter(
     (video) => video.id !== selectedVideo.id
   );

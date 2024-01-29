@@ -1,4 +1,4 @@
-import "./Video.scss";
+import "./VideoPlayer.scss";
 
 const VideoPlayer = ({ selectedVideo }) => {
   return (

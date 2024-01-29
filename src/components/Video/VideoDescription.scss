@@ -1,12 +1,21 @@
 @use "../../styles/colors" as colors;
 @use "../../styles/fonts" as font;
+@use "../../styles/mixins" as *;
 .video-description {
   margin: 0rem 1rem;
 
+  @include desktop {
+    margin: unset;
+    margin-left: 4rem;
+  }
   &__title {
     line-height: 1.8rem;
     font-weight: font.$demi;
     font-size: 1.5rem;
+    @include tablet {
+      font-weight: 700;
+      font-size: 2.5rem;
+    }
   }
   &__container {
     display: flex;
@@ -14,18 +23,49 @@
     gap: 4rem;
     border-bottom: 0.063rem solid colors.$mercury;
     border-top: 0.063rem solid colors.$mercury;
+
+    @include tablet {
+      border-top: unset;
+      gap: 29rem;
+    }
   }
 
+  &__sub-container {
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+      gap: 2rem;
+    }
+  }
   &__sub-description {
     &--bold {
       font-weight: font.$demi;
+      @include desktop {
+        margin: 0.5rem;
+      }
     }
 
     &--grey {
       color: colors.$silver;
+      @include desktop {
+        margin: 0.5rem;
+      }
     }
   }
 
+  &__icon {
+    margin-right: 0.5rem;
+  }
+
+  &__description {
+    @include tablet {
+      line-height: 1.3rem;
+    }
+
+    @include desktop {
+      padding: 1rem;
+    }
+  }
   &__comment-number {
     font-weight: font.$bold;
   }

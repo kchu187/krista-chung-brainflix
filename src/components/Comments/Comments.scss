@@ -1,10 +1,12 @@
 @use "../../styles/fonts" as font;
 @use "../../styles/colors" as colors;
+@use "../../styles/mixins" as *;
 
 .comments {
   padding: 0.1rem 1rem;
   display: flex;
   flex-direction: column;
+  margin: 0rem 1rem;
 
   &__list {
     list-style: none;
@@ -23,6 +25,11 @@
     gap: 1rem;
     flex-direction: row;
     justify-content: space-between;
+
+    @include tablet {
+      margin-left: 1rem;
+      padding: 0.5rem;
+    }
   }
   &__name-container {
     display: flex;
@@ -40,6 +47,10 @@
   &__subsection {
     font-size: 0.813rem;
     width: 45rem;
+
+    @include desktop {
+      width: 48rem;
+    }
   }
   &__avatar {
     border-radius: 100%;
@@ -48,6 +59,11 @@
     background-color: colors.$mercury;
     position: relative;
     top: 0.8rem;
+    @include tablet {
+      max-width: 3rem;
+      max-height: 3rem;
+      height: auto;
+    }
   }
 
   &__content {
