@@ -22,7 +22,7 @@ function Header() {
         </div>
         <img
           src={myAvatar}
-          class="header__avatar"
+          className="header__avatar"
           alt="side profile of man's face"
         />
         <Button
