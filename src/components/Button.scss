@@ -21,6 +21,7 @@
 
   &__header {
     @extend .button;
+    width: 18rem;
 
     @include tablet {
       width: 10rem;

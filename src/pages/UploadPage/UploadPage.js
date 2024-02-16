@@ -1,11 +1,12 @@
 import { useParams, Navigate } from "react-router-dom";
 import Header from "../../components/Header/Header";
+import UploadForm from "../../components/Upload/UploadForm";
 
 function UploadPage() {
   return (
     <>
       <Header />
-      <h1> Upload Page</h1>
+      <UploadForm />
     </>
   );
 }
