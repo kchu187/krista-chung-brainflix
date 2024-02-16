@@ -1,5 +1,7 @@
 import "./Header.scss";
 import "../Button.scss";
+import { NavLink } from "react-router-dom";
+
 import logo from "../../assets/images/BrainFlix-logo.svg";
 import searchIcon from "../../assets/images/Icons/search.svg";
 import myAvatar from "../../assets/images/Mohan-muruge.jpg";
@@ -10,8 +12,9 @@ function Header() {
   return (
     <>
       <header className="header">
-        <img src={logo} className="header__logo" alt="logo" />
-
+        <NavLink to="/">
+          <img src={logo} className="header__logo" alt="logo" />
+        </NavLink>
         <div className="header__search-container">
           <img
             src={searchIcon}
@@ -25,12 +28,14 @@ function Header() {
           className="header__avatar"
           alt="side profile of man's face"
         />
-        <Button
-          buttonClassName="button__header"
-          label="UPLOAD"
-          iconImage={uploadIcon}
-          iconClassName="button__icon"
-        />
+        <NavLink to="/upload ">
+          <Button
+            buttonClassName="button__header"
+            label="UPLOAD"
+            iconImage={uploadIcon}
+            iconClassName="button__icon"
+          />
+        </NavLink>
       </header>
     </>
   );
