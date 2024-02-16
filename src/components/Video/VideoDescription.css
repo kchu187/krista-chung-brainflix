@@ -1,0 +1,94 @@
+@font-face {
+  font-family: "Avenir";
+  src: url("../assets/Font/AvenirNextLTPro-Regular.otf") format("opentype"), url("../assets/Font/AvenirNextLTPro.ttf") format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Avenir";
+  src: url("../assets/Font/AvenirNextLTPro-Demi.otf") format("opentype");
+  src: url("../assets/Font/AvenirNextLTProDemi.ttf") format("truetype");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Avenir";
+  src: url("../assets/Font/AvenirNextLTPro-Bold.otf") format("opentype");
+  src: url("../assets/Font/AvenirNextLTProBold.ttf") format("truetype");
+  font-weight: 700;
+}
+.video-description {
+  margin: 0rem 1rem;
+}
+@media (min-width: 1280px) {
+  .video-description {
+    margin: unset;
+    margin-left: 4rem;
+  }
+}
+.video-description__title {
+  line-height: 1.8rem;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+@media (min-width: 768px) {
+  .video-description__title {
+    font-weight: 700;
+    font-size: 2.5rem;
+  }
+}
+.video-description__container {
+  display: flex;
+  justify-content: flex-start;
+  gap: 4rem;
+  border-bottom: 0.063rem solid #e1e1e1;
+  border-top: 0.063rem solid #e1e1e1;
+}
+@media (min-width: 768px) {
+  .video-description__container {
+    border-top: unset;
+    gap: 25rem;
+  }
+}
+@media (min-width: 768px) {
+  .video-description__sub-container {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+  }
+}
+.video-description__sub-description--bold {
+  font-weight: 600;
+}
+@media (min-width: 768px) {
+  .video-description__sub-description--bold {
+    width: 5rem;
+  }
+}
+@media (min-width: 1280px) {
+  .video-description__sub-description--bold {
+    margin: 0.5rem;
+  }
+}
+.video-description__sub-description--grey {
+  color: #afafaf;
+}
+@media (min-width: 1280px) {
+  .video-description__sub-description--grey {
+    margin: 0.5rem;
+  }
+}
+.video-description__icon {
+  margin-right: 0.5rem;
+}
+@media (min-width: 768px) {
+  .video-description__description {
+    line-height: 1.3rem;
+  }
+}
+@media (min-width: 1280px) {
+  .video-description__description {
+    padding: 1rem;
+  }
+}
+.video-description__comment-number {
+  font-weight: 700;
+}/*# sourceMappingURL=VideoDescription.css.map */

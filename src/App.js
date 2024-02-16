@@ -1,52 +1,20 @@
 import { useState } from "react";
-import "./App.scss";
-import Header from "./components/Header/Header";
-import VideoData from "./Data/videos.json";
-import VideoDetailsData from "./Data/video-details.json";
-import VideoPlayer from "./components/Video/VideoPlayer";
-import VideoDescription from "./components/Video/VideoDescription.js";
-import VideoList from "./components/Video/VideoList";
-import Comments from "./components/Comments/Comments.js";
-import CommentForm from "./components/Comments/CommentForm.js";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import UploadPage from "./pages/UploadPage/UploadPage.js";
+import HomePage from "./pages/HomePage/HomePage.js";
+import NotFoundPage from "./pages/NotFoundPage/NotFoundPage.js";
 
 const App = () => {
-  //Set state for the video that has been clicked which will be the selected video
-  const [selectedVideo, setSelectedVideo] = useState(VideoData[0]);
-
-  // Set separate state for video details
-  const [selectedVideoDetails, setSelectedVideoDetails] = useState(
-    VideoDetailsData[0]
-  );
-
-  const handleVideoSelect = (video) => {
-    const description = VideoDetailsData.find(
-      (description) => description.id === video.id
-    );
-    setSelectedVideo(video);
-    setSelectedVideoDetails(description);
-  };
-
-  //Filter videos so the selected video does not show in the videolist
-  const filteredVideos = VideoData.filter(
-    (video) => video.id !== selectedVideo.id
-  );
-
   return (
-    <>
-      <Header />
-      <VideoPlayer selectedVideo={selectedVideo} />
-      <div className="container">
-        <div className="sub-container">
-          <VideoDescription selectedVideoDetails={selectedVideoDetails} />
-          <CommentForm />
-          <Comments selectedVideoDetails={selectedVideoDetails} />
-        </div>
-        <VideoList
-          videos={filteredVideos}
-          onSelectedVideo={handleVideoSelect}
-        />
-      </div>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="upload" element={<UploadPage />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 

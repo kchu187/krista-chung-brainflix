@@ -1,0 +1,82 @@
+@font-face {
+  font-family: "Avenir";
+  src: url("../assets/Font/AvenirNextLTPro-Regular.otf") format("opentype"), url("../assets/Font/AvenirNextLTPro.ttf") format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Avenir";
+  src: url("../assets/Font/AvenirNextLTPro-Demi.otf") format("opentype");
+  src: url("../assets/Font/AvenirNextLTProDemi.ttf") format("truetype");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Avenir";
+  src: url("../assets/Font/AvenirNextLTPro-Bold.otf") format("opentype");
+  src: url("../assets/Font/AvenirNextLTProBold.ttf") format("truetype");
+  font-weight: 700;
+}
+.comments {
+  padding: 0.1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  margin: 0rem 1rem;
+}
+.comments__list {
+  list-style: none;
+  padding-left: 0rem;
+}
+.comments__item {
+  border-bottom: 0.063rem solid #e1e1e1;
+  border-top: 0.063rem solid #e1e1e1;
+  display: flex;
+  gap: 1rem;
+  flex-direction: row;
+  justify-content: space-between;
+}
+@media (min-width: 768px) {
+  .comments__item {
+    margin-left: 1rem;
+    padding: 0.5rem;
+  }
+}
+.comments__name-container {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.813rem;
+}
+.comments__name {
+  font-weight: 600;
+}
+.comments__timestamp {
+  color: #afafaf;
+}
+.comments__subsection {
+  font-size: 0.813rem;
+  width: 45rem;
+}
+@media (min-width: 1280px) {
+  .comments__subsection {
+    width: 48rem;
+  }
+}
+.comments__avatar {
+  border-radius: 100%;
+  width: 8rem;
+  height: 2.188rem;
+  background-color: #e1e1e1;
+  position: relative;
+  top: 0.8rem;
+}
+@media (min-width: 768px) {
+  .comments__avatar {
+    max-width: 3rem;
+    max-height: 3rem;
+    height: auto;
+  }
+}
+.comments__content {
+  margin-top: 0rem;
+  line-height: 1.125rem;
+  word-wrap: break-word;
+  word-break: break-word;
+}/*# sourceMappingURL=Comments.css.map */
