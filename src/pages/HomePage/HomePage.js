@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { API_KEY, BASE_URL } from "../../utils.js";
-import "./App.scss";
+import "./HomePage.scss";
 import ReactDOM from "react-dom/client";
 import {
   BrowserRouter,
@@ -63,20 +63,24 @@ const HomePage = () => {
   return (
     <>
       <Header />
-      <VideoPlayer selectedVideo={selectedVideo} />
 
-      {/* <div className="container">
-        <div className="sub-container">
-          <VideoDescription selectedVideoDetails={selectedVideo} />
-          <CommentForm />
-          <Comments selectedVideoDetails={selectedVideo} />
+      <body>
+        <VideoPlayer selectedVideo={selectedVideo} />
+
+        <div className="container">
+          <div className="sub-container">
+            <VideoDescription selectedVideo={selectedVideo} />
+            <CommentForm />
+            {/* <Comments selectedVideoDetails={selectedVideo} /> */}
+          </div>
+          <VideoList
+            videos={filteredVideos}
+            setSelectedVideo={setSelectedVideo}
+
+            // onSelectedVideo={handleVideoSelect}
+          />
         </div>
-        <VideoList
-          videos={filteredVideos}
-          
-          // onSelectedVideo={handleVideoSelect}
-        />
-      </div> */}
+      </body>
     </>
   );
 };

@@ -1,5 +1,5 @@
-import "./VideoList.scss";
 import { Link } from "react-router-dom";
+import "./VideoList.scss";
 
 const VideoList = ({ videos, setSelectedVideo }) => {
   return (

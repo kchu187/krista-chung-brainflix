@@ -10,19 +10,22 @@ function formattedTime(timestamp) {
     .padStart(2, "0")}/${date.getFullYear()}`;
 }
 
-const VideoDescription = ({ selectedVideoDetails }) => {
+const VideoDescription = ({ selectedVideo }) => {
+  const commentCount = selectedVideo.comments
+    ? selectedVideo.comments.length
+    : 0;
   return (
     <section className="video-description">
-      <h2 className="video-description__title">{selectedVideoDetails.title}</h2>
+      <h2 className="video-description__title">{selectedVideo.title}</h2>
       <div className="video-description__container">
         <div className="video-description__sub-container">
           <p className="video-description__sub-description--bold">
             {" "}
-            By {selectedVideoDetails.channel}
+            By {selectedVideo.channel}
           </p>
           <p className="video-description__sub-description--grey">
             {" "}
-            {formattedTime(selectedVideoDetails.timestamp)}
+            {formattedTime(selectedVideo.timestamp)}
           </p>
         </div>
         <div className="video-description__sub-container">
@@ -32,7 +35,7 @@ const VideoDescription = ({ selectedVideoDetails }) => {
               src={ViewsIcon}
               alt="Icon image of an eye"
             />
-            {selectedVideoDetails.views}
+            {selectedVideo.views}
           </p>
           <p className="video-description__sub-description--grey">
             {" "}
@@ -41,16 +44,16 @@ const VideoDescription = ({ selectedVideoDetails }) => {
               src={LikesIcon}
               alt="Small grey thumbs-up icon"
             />
-            {selectedVideoDetails.likes}
+            {selectedVideo.likes}
           </p>
         </div>
       </div>
       <p className="video-description__description">
         {" "}
-        {selectedVideoDetails.description}{" "}
+        {selectedVideo.description}{" "}
       </p>
       <p className="video-description__comment-number">
-        {selectedVideoDetails.comments.length} Comments
+        {commentCount} Comments
       </p>
     </section>
   );
