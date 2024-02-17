@@ -1,4 +1,7 @@
 import { useState } from "react";
+import axios from "axios";
+import { API_KEY, BASE_URL } from "../../utils.js./utils";
+import { useState, useEffect } from "react";
 import "./App.scss";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
