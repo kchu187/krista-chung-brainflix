@@ -18,14 +18,15 @@
     font-size: 0.813rem;
     margin: 1rem 0rem 0.5rem 1rem;
   }
-  &__item {
+
+  &__anchor {
     padding: 0rem 1rem;
     display: flex;
     flex-direction: row;
     margin: 0.5rem 0rem;
     gap: 1rem;
+    color: unset;
   }
-
   &__image {
     width: 6rem;
     height: 4rem;

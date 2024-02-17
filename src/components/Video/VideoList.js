@@ -8,7 +8,7 @@ const VideoList = ({ videos, setSelectedVideo }) => {
       <ul className="video-list">
         {videos.map((video) => (
           <li className="video-list__item" key={video.id}>
-            <Link to={`/videos/${video.id}`}>
+            <Link to={`/videos/${video.id}`} className="video-list__anchor">
               <img
                 className="video-list__image"
                 src={video.image}
