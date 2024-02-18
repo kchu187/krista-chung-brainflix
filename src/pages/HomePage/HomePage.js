@@ -61,7 +61,7 @@ const HomePage = () => {
           <div className="sub-container">
             <VideoDescription selectedVideo={selectedVideo} />
             <CommentForm />
-            {/* <Comments selectedVideoDetails={selectedVideo} /> */}
+            <Comments selectedVideo={selectedVideo} />
           </div>
           <VideoList
             videos={filteredVideos}

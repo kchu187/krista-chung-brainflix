@@ -1,4 +1,8 @@
 import "./Comments.scss";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router";
+import axios from "axios";
+import { API_KEY, BASE_URL } from "../../utils";
 
 //Create a function to format the epoch time into read-able timestamp
 function formattedTime(timestamp) {
@@ -9,11 +13,35 @@ function formattedTime(timestamp) {
     .padStart(2, "0")}/${date.getFullYear()}`;
 }
 
-const Comments = ({ selectedVideoDetails }) => {
+const Comments = ({ selectedVideo }) => {
+  const { videoId } = useParams();
+  const [commentsData, setCommentsData] = useState(null);
+
+  useEffect(() => {
+    const fetchCommentsData = async () => {
+      try {
+        const response = await axios.get(
+          `${BASE_URL}/videos/${selectedVideo.id}?api_key=${API_KEY}`
+        );
+        setCommentsData(response.data);
+      } catch (error) {
+        console.error("Error fetching additional video information:", error);
+      }
+    };
+
+    if (selectedVideo.id) {
+      fetchCommentsData();
+    }
+  }, [selectedVideo]);
+  //To prevent errors of 'rendering null' before descriptionInfo data is rendered
+  if (!commentsData) {
+    return null;
+  }
+
   return (
     <section className="comments">
       <ul className="comments__list">
-        {selectedVideoDetails.comments.map((comments, i) => (
+        {commentsData.comments.map((comments, i) => (
           <li className="comments__item" key={i}>
             <div className="comments__avatar"></div>
             <div className="comments__subsection">
