@@ -34,25 +34,27 @@ const VideoDescription = ({ selectedVideo }) => {
       fetchAdditionalInfo();
     }
   }, [selectedVideo]);
+
+  //To prevent errors of 'rendering null' before descriptionInfo data is rendered
   if (!descriptionInfo) {
-    return null; // or return a loading message
+    return null;
   }
 
-  const commentCount = selectedVideo.comments
-    ? selectedVideo.comments.length
+  const commentCount = descriptionInfo.comments
+    ? descriptionInfo.comments.length
     : 0;
   return (
     <section className="video-description">
-      <h2 className="video-description__title">{selectedVideo.title}</h2>
+      <h2 className="video-description__title">{descriptionInfo.title}</h2>
       <div className="video-description__container">
         <div className="video-description__sub-container">
           <p className="video-description__sub-description--bold">
             {" "}
-            By {selectedVideo.channel}
+            By {descriptionInfo.channel}
           </p>
           <p className="video-description__sub-description--grey">
             {" "}
-            {formattedTime(selectedVideo.timestamp)}
+            {formattedTime(descriptionInfo.timestamp)}
           </p>
         </div>
         <div className="video-description__sub-container">
@@ -71,12 +73,12 @@ const VideoDescription = ({ selectedVideo }) => {
               src={LikesIcon}
               alt="Small grey thumbs-up icon"
             />
-            {selectedVideo.likes}
+            {descriptionInfo.likes}
           </p>
         </div>
       </div>
       <p className="video-description__description">
-        {selectedVideo.description}
+        {descriptionInfo.description}
       </p>
       <p className="video-description__comment-number">
         {commentCount} Comments
