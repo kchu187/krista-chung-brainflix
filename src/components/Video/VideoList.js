@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "./VideoList.scss";
 
-const VideoList = ({ videos, setSelectedVideo }) => {
+const VideoList = ({ videos }) => {
   return (
     <section className="video-list__container">
       <h2 className="video-list__heading">NEXT VIDEOS</h2>

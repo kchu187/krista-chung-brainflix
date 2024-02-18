@@ -1,6 +1,10 @@
 import "./VideoDescription.scss";
 import ViewsIcon from "../../assets/images/Icons/views.svg";
 import LikesIcon from "../../assets/images/Icons/likes.svg";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router";
+import axios from "axios";
+import { API_KEY, BASE_URL } from "../../utils";
 //Create a function to format epoch time to readable timestamps
 function formattedTime(timestamp) {
   const date = new Date(timestamp);
@@ -11,6 +15,29 @@ function formattedTime(timestamp) {
 }
 
 const VideoDescription = ({ selectedVideo }) => {
+  const { videoId } = useParams();
+  const [descriptionInfo, setDescriptionInfo] = useState(null);
+
+  useEffect(() => {
+    const fetchAdditionalInfo = async () => {
+      try {
+        const response = await axios.get(
+          `${BASE_URL}/videos/${selectedVideo.id}?api_key=${API_KEY}`
+        );
+        setDescriptionInfo(response.data);
+      } catch (error) {
+        console.error("Error fetching additional video information:", error);
+      }
+    };
+
+    if (selectedVideo.id) {
+      fetchAdditionalInfo();
+    }
+  }, [selectedVideo]);
+  if (!descriptionInfo) {
+    return null; // or return a loading message
+  }
+
   const commentCount = selectedVideo.comments
     ? selectedVideo.comments.length
     : 0;
@@ -35,7 +62,7 @@ const VideoDescription = ({ selectedVideo }) => {
               src={ViewsIcon}
               alt="Icon image of an eye"
             />
-            {selectedVideo.views}
+            {descriptionInfo.views}
           </p>
           <p className="video-description__sub-description--grey">
             {" "}
@@ -49,8 +76,7 @@ const VideoDescription = ({ selectedVideo }) => {
         </div>
       </div>
       <p className="video-description__description">
-        {" "}
-        {selectedVideo.description}{" "}
+        {selectedVideo.description}
       </p>
       <p className="video-description__comment-number">
         {commentCount} Comments

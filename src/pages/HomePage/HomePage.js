@@ -32,6 +32,7 @@ const HomePage = () => {
           `${BASE_URL}/videos?api_key=${API_KEY}`
         );
         setVideos(response.data);
+
         const video = videoId
           ? response.data.find((video) => video.id === videoId) || {}
           : response.data[0];
@@ -45,17 +46,6 @@ const HomePage = () => {
     fetchVideoData();
   }, [videoId]);
 
-  // Set separate state for video details
-
-  // const handleVideoSelect = (video) => {
-  //   const description = VideoDetailsData.find(
-  //     (description) => description.id === video.id
-  //   );
-  //   setSelectedVideo(video);
-  //   setSelectedVideoDetails(description);
-  // };
-
-  //Filter videos so the selected video does not show in the videolist
   const filteredVideos = videos.filter(
     (video) => video.id !== selectedVideo.id
   );
@@ -75,7 +65,6 @@ const HomePage = () => {
           </div>
           <VideoList
             videos={filteredVideos}
-            setSelectedVideo={setSelectedVideo}
 
             // onSelectedVideo={handleVideoSelect}
           />
