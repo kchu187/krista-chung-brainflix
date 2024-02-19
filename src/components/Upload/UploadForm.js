@@ -23,7 +23,7 @@ function UploadForm() {
 
   return (
     <form className="upload-form" onSubmit={handleSubmit}>
-      <h1> Upload Video</h1>
+      <h1 className="upload-form__header"> Upload Video</h1>
       <h2 className="upload-form__title">VIDEO THUMBNAIL</h2>
       <img
         className="upload-form__image"
@@ -42,7 +42,7 @@ function UploadForm() {
           onChange={handleChangeTitle}
         />
       </label>
-      <label className="upload-form__title">
+      <label className="upload-form__title--description">
         ADD A VIDEO DESCRIPTION
         <input
           className="upload-form__field--description"

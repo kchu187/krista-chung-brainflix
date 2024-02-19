@@ -63,5 +63,11 @@
     padding: 1rem 0.8rem;
     gap: 5rem;
     width: 18rem;
+    @include tablet {
+      gap: 1rem;
+      width: 10rem;
+      left: 33.8rem;
+      position: relative;
+    }
   }
 }
