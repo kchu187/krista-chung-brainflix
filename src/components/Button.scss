@@ -69,5 +69,8 @@
       left: 33.8rem;
       position: relative;
     }
+    @include desktop {
+      left: 59.8rem;
+    }
   }
 }

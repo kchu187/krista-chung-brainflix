@@ -6,13 +6,36 @@
   margin: 1rem;
   display: flex;
   flex-direction: column;
-  &__header {
-    padding-top: 1rem;
-    margin-top: 0rem;
-    @include tablet {
-      border-bottom: 0.063rem solid colors.$mercury;
-      padding-bottom: 2rem;
+
+  @include desktop {
+    margin: 3rem;
+    &__header {
+      padding-top: 1rem;
+      margin-top: 0rem;
+      @include tablet {
+        border-bottom: 0.063rem solid colors.$mercury;
+        padding-bottom: 2rem;
+      }
+      @include desktop {
+        font-size: 3rem;
+      }
     }
+  }
+  &__container {
+    display: flex;
+    flex-direction: row;
+
+    @include desktop {
+      gap: 2rem;
+    }
+  }
+  &__thumbnail-subcontainer {
+    display: flex;
+    flex-direction: column;
+  }
+  &__subcontainer {
+    display: flex;
+    flex-direction: column;
   }
   &__title {
     color: colors.$silver;
@@ -33,6 +56,10 @@
     @include tablet {
       width: 50%;
     }
+
+    @include desktop {
+      width: 23rem;
+    }
   }
   &__field {
     width: 91%;
@@ -45,7 +72,9 @@
     font-family: avenir;
     padding: 0.8rem;
     outline: none;
-
+    @include desktop {
+      width: 47rem;
+    }
     &--description {
       @extend .upload-form__field;
       padding-bottom: 5rem;
@@ -63,6 +92,9 @@
       position: relative;
       top: -4.5rem;
       left: 3rem;
+    }
+    @include desktop {
+      left: 16rem;
     }
   }
 }
