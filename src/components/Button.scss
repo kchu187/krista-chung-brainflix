@@ -28,10 +28,12 @@
       gap: unset;
       position: absolute;
       left: 33rem;
+      top: 0.5rem;
     }
 
     @include desktop {
       left: 58rem;
+      top: 0.5rem;
     }
   }
 
@@ -47,14 +49,14 @@
 
     @include tablet {
       position: absolute;
-      top: 49.8rem;
+      top: 53.5rem;
       left: 37rem;
       gap: 1rem;
       width: 10rem;
     }
     @include desktop {
       left: 49rem;
-      top: 58rem;
+      top: 62.5rem;
     }
   }
 

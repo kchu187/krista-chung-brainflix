@@ -23,10 +23,10 @@
   }
   &__container {
     display: flex;
-    flex-direction: row;
-
+    flex-direction: column;
     @include desktop {
       gap: 2rem;
+      flex-direction: row;
     }
   }
   &__thumbnail-subcontainer {
