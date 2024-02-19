@@ -4,4 +4,40 @@
 
 .upload-form {
   margin: 1rem;
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    color: colors.$silver;
+    font-weight: font.$demi;
+    font-size: 0.813rem;
+    margin: 1rem 0rem 0.5rem;
+  }
+
+  &__image {
+    border-radius: 0.3rem;
+  }
+  &__field {
+    width: 91%;
+
+    color: colors.$darkblack;
+    background-color: colors.$alabaster;
+    border-color: colors.$mercury;
+    border: solid 0.063rem colors.$mercury;
+    border-radius: 0.25rem;
+    font-family: avenir;
+    padding: 0.8rem;
+    outline: none;
+
+    &--description {
+      @extend .upload-form__field;
+      padding-bottom: 5rem;
+    }
+  }
+  &__cancel {
+    font-weight: bold;
+    color: colors.$blue;
+    text-align: center;
+    margin-top: 3rem;
+  }
 }
