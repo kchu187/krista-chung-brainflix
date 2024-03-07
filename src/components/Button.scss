@@ -48,15 +48,16 @@
     width: 14rem;
 
     @include tablet {
-      position: absolute;
-      top: 53.5rem;
-      left: 37rem;
+      position: relative;
+      top: -4rem;
+      left: 29rem;
       gap: 1rem;
       width: 10rem;
     }
     @include desktop {
-      left: 49rem;
-      top: 62.5rem;
+      position: relative;
+      left: 40rem;
+      top: -4rem;
     }
   }
 
