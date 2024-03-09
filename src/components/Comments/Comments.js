@@ -2,7 +2,7 @@ import "./Comments.scss";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import axios from "axios";
-import { API_KEY, BASE_URL } from "../../utils";
+import { BASE_URL } from "../../utils";
 
 //Create a function to format the epoch time into read-able timestamp
 function formattedTime(timestamp) {
@@ -21,7 +21,7 @@ const Comments = ({ selectedVideo }) => {
     const fetchCommentsData = async () => {
       try {
         const response = await axios.get(
-          `${BASE_URL}/videos/${selectedVideo.id}?api_key=${API_KEY}`
+          `${BASE_URL}/videos/${selectedVideo.id}`
         );
         setCommentsData(response.data);
       } catch (error) {

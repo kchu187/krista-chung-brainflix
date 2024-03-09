@@ -4,7 +4,7 @@ import LikesIcon from "../../assets/images/Icons/likes.svg";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import axios from "axios";
-import { API_KEY, BASE_URL } from "../../utils";
+import { BASE_URL } from "../../utils";
 //Create a function to format epoch time to readable timestamps
 function formattedTime(timestamp) {
   const date = new Date(timestamp);
@@ -22,7 +22,7 @@ const VideoDescription = ({ selectedVideo }) => {
     const fetchAdditionalInfo = async () => {
       try {
         const response = await axios.get(
-          `${BASE_URL}/videos/${selectedVideo.id}?api_key=${API_KEY}`
+          `${BASE_URL}/videos/${selectedVideo.id}`
         );
         setDescriptionInfo(response.data);
       } catch (error) {

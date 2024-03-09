@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { API_KEY, BASE_URL } from "../../utils.js";
+import { BASE_URL } from "../../utils.js";
 import "./HomePage.scss";
 import ReactDOM from "react-dom/client";
 import {
