@@ -28,9 +28,8 @@ const HomePage = () => {
   useEffect(() => {
     const fetchVideoData = async () => {
       try {
-        const response = await axios.get(
-          `${BASE_URL}/videos?api_key=${API_KEY}`
-        );
+        const response = await axios.get("http://localhost:7000/videos");
+        console.log(response.data);
         setVideos(response.data);
 
         const video = videoId
