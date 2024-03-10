@@ -4,21 +4,51 @@ import { useNavigate } from "react-router-dom";
 import Button from "../Button.js";
 import UploadIcon from "../../assets/images/Icons/upload.svg";
 import UploadPreview from "../../assets/images/Upload-video-preview.jpg";
+import axios from "axios";
+
 function UploadForm() {
   const navigate = useNavigate();
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
 
-  const handleChangeTitle = (event) => {
-    setTitle(event.target.value);
+  const [formData, setFormData] = useState({
+    title: "",
+    description: "",
+  });
+
+  // const [title, setTitle] = useState("");
+  // const [description, setDescription] = useState("");
+
+  // const handleChangeTitle = (event) => {
+  //   setTitle(event.target.value);
+  // };
+  // const handleChangeDescription = (event) => {
+  //   setDescription(event.target.value);
+  // };
+
+  const handleFormChange = (event) => {
+    const { name, value } = event.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
   };
-  const handleChangeDescription = (event) => {
-    setDescription(event.target.value);
-  };
-  const handleSubmit = (event) => {
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    alert("Upload in progress, re-directing to homepage");
-    navigate("/");
+
+    try {
+      //Make a POST request upon form submission
+
+      const response = await axios.post(
+        "http://localhost:7000/videos",
+        formData
+      );
+      alert("Upload successful, re-directing back to homepage!");
+      navigate("/");
+    } catch (error) {
+      console.error("Error uploading video:", error);
+      alert("Error encountered uploading video. Please try again.");
+      navigate("/");
+    }
   };
 
   return (
@@ -40,10 +70,10 @@ function UploadForm() {
             <input
               className="upload-form__field"
               type="text"
-              name="video-title"
-              value={title}
+              name="title"
+              value={formData.name}
               placeholder="Add a title to your video"
-              onChange={handleChangeTitle}
+              onChange={handleFormChange}
             />
           </label>
           <label className="upload-form__title--description">
@@ -51,10 +81,10 @@ function UploadForm() {
             <input
               className="upload-form__field--description"
               type="text"
-              name="video-description"
-              value={description}
+              name="description"
+              value={formData.value}
               placeholder="Add a description to your video"
-              onChange={handleChangeDescription}
+              onChange={handleFormChange}
             />
           </label>
         </div>
