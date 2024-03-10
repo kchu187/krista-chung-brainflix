@@ -20,6 +20,7 @@
 
     @include desktop {
       line-height: 2.8rem;
+      margin-bottom: 0.8rem;
     }
   }
   &__container {
@@ -44,12 +45,15 @@
   }
   &__sub-description {
     &--bold {
-      font-weight: font.$demi;
+      font-weight: font.$bold;
       @include tablet {
         width: 5rem;
       }
       @include desktop {
         margin: 0.5rem;
+        font-size: 1rem;
+        margin-left: 0.2rem;
+        width: 9rem;
       }
     }
 
@@ -76,5 +80,9 @@
   }
   &__comment-number {
     font-weight: font.$bold;
+    @include desktop {
+      position: relative;
+      left: 1rem;
+    }
   }
 }

@@ -22,3 +22,9 @@ a {
     flex-direction: row;
   }
 }
+
+.sub-container {
+  @include desktop {
+    min-width: 60.94rem;
+  }
+}
