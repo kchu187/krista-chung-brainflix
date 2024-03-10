@@ -15,6 +15,10 @@
     gap: 1rem;
     margin-top: 0.5rem;
   }
+
+  @include desktop {
+    margin-bottom: 0rem;
+  }
   &__logo {
     max-height: 1.563rem;
     max-width: 7.5rem;

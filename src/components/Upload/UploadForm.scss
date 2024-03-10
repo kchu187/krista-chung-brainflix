@@ -91,10 +91,12 @@
     @include tablet {
       position: relative;
       top: -4.5rem;
-      left: 3rem;
+      left: 27rem;
+      width: max-content;
+      height: max-content;
     }
     @include desktop {
-      left: 16rem;
+      left: 52rem;
     }
   }
 }
