@@ -1,7 +1,8 @@
+import "./HomePage.scss";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { BASE_URL } from "../../utils.js";
-import "./HomePage.scss";
+
 import ReactDOM from "react-dom/client";
 import {
   BrowserRouter,
@@ -11,7 +12,6 @@ import {
   useParams,
 } from "react-router-dom";
 import Header from "../../components/Header/Header.js";
-// import VideoData from "../../Data/videos.json";
 import VideoDetailsData from "../../Data/video-details.json";
 import VideoPlayer from "../../components/Video/VideoPlayer.js";
 import VideoDescription from "../../components/Video/VideoDescription.js";
@@ -21,7 +21,6 @@ import CommentForm from "../../components/Comments/CommentForm.js";
 
 const HomePage = () => {
   const { videoId } = useParams();
-  //Set state for the video that has been clicked which will be the selected video
   const [selectedVideo, setSelectedVideo] = useState({});
   const [videos, setVideos] = useState([]);
 
@@ -29,15 +28,13 @@ const HomePage = () => {
     const fetchVideoData = async () => {
       try {
         const response = await axios.get("http://localhost:7000/videos");
-        console.log(response.data);
+
         setVideos(response.data);
 
         const video = videoId
           ? response.data.find((video) => video.id === videoId) || {}
           : response.data[0];
         setSelectedVideo(video);
-
-        console.log(response.data);
       } catch (error) {
         console.error("Error, could not fetch video data", error);
       }
@@ -50,26 +47,20 @@ const HomePage = () => {
   );
 
   return (
-    <>
+    <div className="body-container">
       <Header />
 
-      <body>
-        <VideoPlayer selectedVideo={selectedVideo} />
+      <VideoPlayer selectedVideo={selectedVideo} />
 
-        <div className="container">
-          <div className="sub-container">
-            <VideoDescription selectedVideo={selectedVideo} />
-            <CommentForm />
-            <Comments selectedVideo={selectedVideo} />
-          </div>
-          <VideoList
-            videos={filteredVideos}
-
-            // onSelectedVideo={handleVideoSelect}
-          />
+      <div className="container">
+        <div className="sub-container">
+          <VideoDescription selectedVideo={selectedVideo} />
+          <CommentForm />
+          <Comments selectedVideo={selectedVideo} />
         </div>
-      </body>
-    </>
+        <VideoList videos={filteredVideos} />
+      </div>
+    </div>
   );
 };
 

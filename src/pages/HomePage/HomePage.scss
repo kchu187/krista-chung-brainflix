@@ -2,7 +2,7 @@
 @use "../../styles/colors" as colors;
 @use "../../styles/mixins" as *;
 
-body {
+.body-container {
   margin: 0rem;
   font-family: font.$font-stack;
   font-weight: font.$regular;

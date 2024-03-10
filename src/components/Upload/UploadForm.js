@@ -14,16 +14,6 @@ function UploadForm() {
     description: "",
   });
 
-  // const [title, setTitle] = useState("");
-  // const [description, setDescription] = useState("");
-
-  // const handleChangeTitle = (event) => {
-  //   setTitle(event.target.value);
-  // };
-  // const handleChangeDescription = (event) => {
-  //   setDescription(event.target.value);
-  // };
-
   const handleFormChange = (event) => {
     const { name, value } = event.target;
     setFormData({
